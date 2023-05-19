@@ -3,11 +3,10 @@ import HomePage from './pages/HomePage';
 import EmployeePage from './pages/EmployeePage';
 import { useEffect, useState } from 'react'; 
 import EmployeesData from './data/EmployeesData';
-// const EmployeesData = require('./data/EmployeesData')
 
 function App() {
   // const [employees, setEmployees] = useState([]);
-  const [employee, setEmployee] = useState({});
+  const [employee, setEmployee] = useState(EmployeesData[0]);
  
   // useEffect(()=>{
   //   console.log('employee: '+ JSON.stringify(employees[1]))
@@ -21,9 +20,12 @@ function App() {
   //   fetchData();
   // },[])
 
+  useEffect(()=>{console.log(employee)},[employee])
+
   return (
     <div className="App">
-      <HomePage employees = {[...EmployeesData]}/>
+      
+      <HomePage employees = {[...EmployeesData] } setEmployee={setEmployee}/> 
       <EmployeePage employee = {employee}/>
     </div>
   );

@@ -1,14 +1,14 @@
 import React from 'react';
 import EmployeeListItem from './EmployeeListItem';
 
-export default function EmployeeList(employees) {
-    console.log(employees.employees)
+export default function EmployeeList({employees, setEmployee}) {
+    console.log(employees)
 
   return (
     <div className='EmployeeList'>
-        {employees.employees.map((employee, idx)=>{
+        {employees.map((employee, idx)=>{
             return(
-                <EmployeeListItem employee={employee} key={idx}/> 
+                <EmployeeListItem employee={employee} key={idx} setEmployee={setEmployee}/> 
             )
         })}
     </div>

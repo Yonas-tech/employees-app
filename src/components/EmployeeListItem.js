@@ -1,11 +1,15 @@
 import React from 'react'
 
-export default function EmployeeListItem(employee) {
-    console.log(employee)
+export default function EmployeeListItem({employee, setEmployee}) {
+    const data = employee;
+
+
+
   return (
-    <div className='EmployeeListItem'>
-        <p className='empl-name'>{employee.employee.fName + " " + employee.employee.lName}</p>
-        <p className='empl-position'>{employee.employee.position}</p>
+    <div className='EmployeeListItem' onClick={(e)=>{setEmployee(data)}}>
+        <img src={`../Images/${data.fName + data.lName}.png`} alt="" />
+        <p className='empl-name'>{data.fName + " " + data.lName}</p>
+        <p className='empl-position'>{data.position}</p>
     </div>
   )
 }
