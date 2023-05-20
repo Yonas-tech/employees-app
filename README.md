@@ -2,7 +2,7 @@
 
 Used: states and props,
 
-Deployeed at: https://employee-contacts-app.onrender.com 
+Deployed at: https://employee-contacts-app.onrender.com 
 
 ## Functionality:
 
