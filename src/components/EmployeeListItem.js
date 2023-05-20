@@ -1,20 +1,25 @@
 import React from 'react'
 import Image from './Image';
+import { useState, useEffect } from 'react';
 
 
-export default function EmployeeListItem({employee, setEmployee}) {
-    const data = employee;
+export default function EmployeeListItem({ employee, setEmployee }) {
 
-    // ${data.fName + data.lName}
+  // ${employee.fName + employee.lName}
+  const [portrait, setPortrait] = useState(null);
+
+  useEffect(() => {
+    setPortrait(require(`../Images/${employee.fName + employee.lName}.png`))
+  }, [])
 
   return (
-    <div className='EmployeeListItem' onClick={(e)=>{setEmployee(data)}}>
-        {/* <img src={require(`../Images/EugeneLee.png`)} alt="portrait" /> */}
-        
-        <Image imageName={`${data.fName + data.lName}`}/>
+    <div className='EmployeeListItem' onClick={(e) => { setEmployee(employee) }}>
+      <img className="listPortrait" src={portrait} alt="portrait" />
+      <div className='name-position'>
+        <p className='empl-name'>{employee.fName + " " + employee.lName}</p>
+        <p className='empl-position'>{employee.position}</p>
+      </div>
 
-        <p className='empl-name'>{data.fName + " " + data.lName}</p>
-        <p className='empl-position'>{data.position}</p>
     </div>
   )
 }

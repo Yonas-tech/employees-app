@@ -1,18 +1,34 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 
 
 export default function EmployeePage({ employee }) {
+    // ../Images/${employee.fName+employee.lName}.png 
+
+    const [portrait, setPortrait] = useState(null);
+
+    useEffect(() => {
+        setPortrait(require(`../Images/${employee.fName + employee.lName}.png`))
+    }, [employee])
 
     return (
         <div className='employee-page'>
             <div className='employee-header'>
                 <p className='leftArrow'> </p>
-                <p className='empployee'>Employee</p> 
+                <p className='empployee'>Employee</p>
             </div>
             <div className="employee-container">
                 <div className='portrait-name'>
-                    <div style={{backgroundImage: `url(../Images/${employee.fName+employee.lName}.png)`}}>
+                    <div style={{
+                        backgroundImage: `url(${portrait})`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                        width:'50%',
+                        height:'200px',
+                    }}>
                         {/* <img src={`../Images/${employee.fName+employee.lName}.png`} alt="portrait" /> */}
+                    .
                     </div>
                     <div className='name-position'>
                         <h3>{employee.fName + " " + employee.lName}</h3>
@@ -42,7 +58,7 @@ export default function EmployeePage({ employee }) {
                             <p>{'\u003E'}</p>
                         </a>
                     </div>
-                    
+
                 </div>
                 <hr />
                 <div className='sms contact'>
@@ -64,9 +80,9 @@ export default function EmployeePage({ employee }) {
                         <p>{employee.Email}</p>
                     </div>
                     <div className='right-arrow'>
-                            <p>{'\u003E'}</p>
+                        <p>{'\u003E'}</p>
                     </div>
-                    
+
                 </div>
                 <hr />
             </div>
