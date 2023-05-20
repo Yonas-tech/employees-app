@@ -9,7 +9,7 @@ export default function SearchBar({setSearchTerm}) {
         <form action="" onSubmit={(e)=>{e.preventDefault();
                                         setSearchTerm(term);}}>
             <input type="text" className="search" placeholder="Search.." 
-                    name="search" onChange={(e)=>{setTerm(e.target.value)}}/>
+                    name="search" onChange={(e)=>{setSearchTerm(e.target.value); setTerm(e.target.value)}}/>
             <button type='submit' className='submit'>Submit</button>
         </form>
     </div>

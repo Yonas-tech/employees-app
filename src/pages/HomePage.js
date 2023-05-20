@@ -10,13 +10,13 @@ export default function HomePage({ employees, setEmployee }) {
 
   const [searchTerm, setSearchTerm] = useState(null);
   const [searchResult, setSearchResult] = useState(null);
-
+// (employees[i].fName + " " + employees[i].lName).includes(searchTerm)
   useEffect(() => {
     setSearchResult(() => {
       let result = [];
       if (searchTerm) {
         for (let i = 0; i < employees.length; i++) {
-          if ((employees[i].fName + " " + employees[i].lName).includes(searchTerm)) {
+          if (employees[i].fName.startsWith(searchTerm) || employees[i].lName.startsWith(searchTerm)) {
             result.push(employees[i])
           }
         }
@@ -29,7 +29,7 @@ export default function HomePage({ employees, setEmployee }) {
     <div className='home-page'>
       <HomeHeader />
       <SearchBar setSearchTerm={setSearchTerm} />
-      {searchResult ?
+      {searchResult && searchResult.length>0 ?
         <EmployeeList employees={searchResult} setEmployee={setEmployee} />
         :
         <EmployeeList employees={employees} setEmployee={setEmployee} />
