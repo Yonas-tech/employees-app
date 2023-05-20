@@ -80,7 +80,9 @@ export default function EmployeePage({ employee }) {
                         <p>{employee.Email}</p>
                     </div>
                     <div className='right-arrow'>
-                        <p>{'\u003E'}</p>
+                        <a href={`mailto:${employee.Email}`}>
+                            <p>{'\u003E'}</p>
+                        </a>
                     </div>
 
                 </div>
