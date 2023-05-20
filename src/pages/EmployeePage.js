@@ -19,17 +19,17 @@ export default function EmployeePage({ employee }) {
             </div>
             <div className="employee-container">
                 <div className='portrait-name'>
-                    <div style={{
+                    {/* <div 
+                    style={{
                         backgroundImage: `url(${portrait})`,
                         backgroundPosition: 'center',
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
                         width:'50%',
-                        height:'200px',
-                    }}>
-                        {/* <img src={`../Images/${employee.fName+employee.lName}.png`} alt="portrait" /> */}
-                    .
-                    </div>
+                        height:'200px',}}
+                    ></div> */}
+                        <img src={`${portrait}`} alt="portrait" />
+                    
                     <div className='name-position'>
                         <h3>{employee.fName + " " + employee.lName}</h3>
                         <p>{employee.position}</p>

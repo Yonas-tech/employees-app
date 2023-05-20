@@ -50,22 +50,27 @@ code {
 
 .search-container{
   width: 100%;
+  height: 30px;
 }
 
 .search-container>form {
   width: 100%;
+  height: 100%;
   border: solid green 2px;
   display: flex;
   justify-content: end;
 }
+
 .submit {
   width: fit-content;
+  height: 100%;
+
 }
 
 .search {
   position: relative;
-  height: 80%;
-  /* width: 90%; */
+  height: 100%;
+  width: 90%;
   left: 0px;
 }
 
@@ -80,10 +85,19 @@ code {
 .EmployeeListItem{
   border: solid red 2px;
   display: flex;
+  gap: 5px;
+  padding-left: 5px;
 }
 
 .listPortrait {
   width: 50px;;
+}
+
+.item-name-position {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
 }
 
 /* Employee Page */
@@ -117,7 +131,18 @@ code {
 
 .portrait-name{
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
+  gap: 10px;
+}
+
+.portrait-name > img {
+  width: 50%;
+}
+
+.name-position{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact {

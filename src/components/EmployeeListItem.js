@@ -15,8 +15,8 @@ export default function EmployeeListItem({ employee, setEmployee }) {
   return (
     <div className='EmployeeListItem' onClick={(e) => { setEmployee(employee) }}>
       <img className="listPortrait" src={portrait} alt="portrait" />
-      <div className='name-position'>
-        <p className='empl-name'>{employee.fName + " " + employee.lName}</p>
+      <div className='item-name-position'>
+        <h4 className='empl-name'>{employee.fName + " " + employee.lName}</h4>
         <p className='empl-position'>{employee.position}</p>
       </div>
 
