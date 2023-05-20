@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       
-      <HomePage employees = {[...EmployeesData] } setEmployee={setEmployee}/> 
+      <HomePage employees = {EmployeesData} setEmployee={setEmployee}/> 
       <EmployeePage employee = {employee}/>
     </div>
   );

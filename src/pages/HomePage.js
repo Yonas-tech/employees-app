@@ -3,7 +3,11 @@ import HomeHeader from '../components/HomeHeader';
 import SearchBar from '../components/SearchBar';
 import EmployeeList from '../components/EmployeeList';
 
+
 export default function HomePage({employees, setEmployee}) {
+
+
+
   return (
     <div className='home-page'>
         <HomeHeader/>

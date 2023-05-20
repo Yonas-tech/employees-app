@@ -26,7 +26,9 @@ export default function EmployeePage({ employee }) {
                         <p>{employee.phoneOffice}</p>
                     </div>
                     <div className='right-arrow'>
+                        <a rel="noopener" target="_blank" href={`tel:${employee.phoneOffice}`}>
                             <p>{'\u003E'}</p>
+                        </a>
                     </div>
                 </div>
                 <hr />
@@ -36,7 +38,9 @@ export default function EmployeePage({ employee }) {
                         <p>{employee.phoneMobile}</p>
                     </div>
                     <div className='right-arrow'>
+                        <a rel="noopener" target="_blank" href={`tel:${employee.phoneMobile}`}>
                             <p>{'\u003E'}</p>
+                        </a>
                     </div>
                     
                 </div>
@@ -47,7 +51,10 @@ export default function EmployeePage({ employee }) {
                         <p>{employee.SMS}</p>
                     </div>
                     <div className='right-arrow'>
+                        {/* I will use URLEncoder for the body of the text message */}
+                        <a rel="noopener" target="_blank" href={`sms:${employee.SMS}?&body=Please%20call%20me%21`}>
                             <p>{'\u003E'}</p>
+                        </a>
                     </div>
                 </div>
                 <hr />
