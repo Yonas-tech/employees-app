@@ -8,7 +8,6 @@ export default [
         phoneMobile: '617-000-0001',
         SMS: '617-000-0001',
         Email: 'king@fakemail.com',
-        image: '../Images/'
     },
     {
         fName: 'Julie',
