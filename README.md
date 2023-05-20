@@ -2,6 +2,8 @@
 
 Used: states and props,
 
+Deployeed at: https://employee-contacts-app.onrender.com 
+
 ## Functionality:
 
 - Clicking on the list items reveals the employee full info on the right, employee page. 
